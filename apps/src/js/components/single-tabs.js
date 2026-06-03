@@ -1,7 +1,8 @@
 const tabsLi = document.querySelectorAll('.single_tab-min li');
 const bigImg = document.querySelector('.single_tab-img img');
 
-tabsLi.forEach((tab, key)=>{
+if (tabsLi.length && bigImg) {
+  tabsLi.forEach((tab, key)=>{
   tab.addEventListener('click', function() {
     tabsLi.forEach((tab2, key2)=>{
       tab2.classList.remove('active');
@@ -10,4 +11,5 @@ tabsLi.forEach((tab, key)=>{
     tab.classList.add('active');
     bigImg.setAttribute('src', tabSrc);
   })
-})
+  })
+}

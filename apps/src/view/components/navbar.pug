@@ -3,10 +3,10 @@ nav.navbar
     form.signin_items(action="")
       input(type="text" name="name" placeholder="*Your nickname") 
       input(type="text" name="email" placeholder="*Your E-mail") 
-      button(type="button"): span Sign In
-      a(href="#!"): span Registration 
+      button(type="submit"): span Sign In
+      a(href="page-phone.html"): span Registration 
   .container.navbar_flex 
-    a.navbar_logo(href="/"): img(src="images/Logo.png", alt="")  
+    a.navbar_logo(href="index.html"): img(src="images/Logo.png", alt="")  
     form.navbar_search(action="")
       input(type="text" name="search" placeholder="What are you looking for?") 
       button.navbar_search-btn(type="button")
@@ -24,26 +24,26 @@ nav.navbar
                     h5 Cell Phones
                     ul 
                       each linkHover in ['Xiaomi','Apple','Samsung','Huawei','BQ','Nokia','Inoi','Vivo']
-                        li: a(href="#!")= linkHover  
+                        li: a(href="page-phone.html")= linkHover  
                   .navbar_menu-list
                     h5 Tablets
                     ul 
                       each linkHover in ['Xiaomi','Apple','Samsung','Huawei','BQ','More...']
-                        li: a(href="#!")= linkHover
+                        li: a(href="page-phone.html")= linkHover
             else 
-              li: a(href="#!")= link 
+              li: a(href="page-phone.html")= link 
         .navbar_menu-top
           .container.menu-top
             .menu-top_config
               .language 
-                a(href="#!") 
+                a(href="index.html") 
                   span English 
                   span.icon-chevrone 
                 .language_more 
-                  a(href="#!") English 
-                  a(href="#!") Russian 
-              a.phone(href="#!").icon-phone: span (907) 555-0101 
-              a.user(href="#!").icon-user: span.sign-in Sign in
-              a.cart(href="#!").icon-cart: span Cart  
+                  a(href="index.html") English 
+                  a(href="page-phone.html") Russian 
+              a.phone(href="page-phone.html").icon-phone: span (907) 555-0101 
+              a.user(href="single.html").icon-user: span.sign-in Sign in
+              a.cart(href="single.html").icon-cart: span Cart  
              
             

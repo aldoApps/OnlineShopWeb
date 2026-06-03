@@ -94,6 +94,7 @@ class Slider {
 }
 const sliders = document.querySelectorAll('.slider');
 sliders.forEach((slider, num) => {
+  if (!slider.querySelector('.slider_items')) return;
   const direction = slider.getAttribute('direction') != 'Y' ? 'X' : 'Y';
   const autoPlay = slider.hasAttribute('auto-play') ? 'true' : 'false';
   const createDots = slider.hasAttribute('create-dots') ? 'true' : 'false';

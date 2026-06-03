@@ -1,9 +1,11 @@
+-var socialLinks = [{name:'telegram', url:'https://t.me/'}, {name:'facebook', url:'https://www.facebook.com/'}, {name:'instagram', url:'https://www.instagram.com/'}]
+
 footer.footer 
   .container.footer_navbar 
-    a.footer_navbar-logo(href="#!"): img(src="images/logo-footer.png", alt="alt") 
+    a.footer_navbar-logo(href="index.html"): img(src="images/logo-footer.png", alt="alt") 
     ul.footer_navbar-list 
       each link in ['News', 'Help', 'Contact']
-        li: a(href="#!")=link 
+        li: a(href="page-phone.html")=link 
     ul.footer_navbar-social 
-      each link in ['telegram', 'facebook', 'instagram']
-        li: a(href="#!" class="icon-"+link)
+      each social in socialLinks
+        li: a(href=social.url target="_blank" rel="noopener" class="icon-"+social.name)
