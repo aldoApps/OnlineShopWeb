@@ -1,0 +1,6 @@
+.products.container   
+  h3.title Xiaomi
+  .products_content 
+    each item, num in xiaomi
+      +cardProduct('xiaomi/phone', num, item.title, item.price)
+  a.more learn more

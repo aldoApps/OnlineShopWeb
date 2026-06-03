@@ -1,0 +1,6 @@
+.products.container   
+  h3.title Top Seller
+  .products_content 
+    each item, num in topSale
+      +cardProduct('watch/top', num, item.title, item.price)
+  a.more learn more

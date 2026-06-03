@@ -1,0 +1,44 @@
+.footer{
+  background: $dark;
+  width: 100%;
+  padding: 30px 0 50px;
+  &_navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    @include media(480px){
+      flex-direction: column;
+    }
+    &-list,
+    &-social{
+      display: flex;
+      a{
+        color: $white;
+      }
+    }
+    &-list{
+      @include media(768px){
+        width: 100%;
+        order: 1;
+        justify-content: center;
+        padding-top: 30px;
+      }
+      a{
+        padding: 10px 15px;
+        @include font(18px, 25px);
+        color: $white;
+      }
+    }
+    &-social{
+      a{
+        @include font(30px);
+        display: flex;
+        margin-left: 15px;
+      }
+      @include media(480px){
+        padding-top: 30px;
+      }
+    }
+  }
+}

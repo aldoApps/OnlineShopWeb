@@ -1,0 +1,91 @@
+.leader{
+  width: 100%;
+  background: $white;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &_content{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 30px;
+    margin-bottom: 30px;
+    @include media(992px){
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(3, auto);
+    }
+    @include media(576px){
+      display: flex;
+      flex-direction: column;
+    }
+    &-item{
+      height: 260px;
+      &:first-of-type{
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2;
+        height: 550px;
+        @include media(992px){
+          grid-row: 1 / span 1;
+          height: 260px;
+        }
+      }
+      &:nth-of-type(2){
+        grid-column: 3 / span 2;
+        @include media(992px){
+          grid-row: 3 / span 1;
+          grid-column: 1 / span 2;
+        }
+      }
+      &:first-of-type,
+      &:nth-of-type(2){
+        .item_content{
+          flex-direction: column-reverse;
+          @include media(576px){
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
+.item{
+  position: relative;
+  @include media(992px){
+    height: 250px;
+  }
+  &_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &_content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    &-text{
+      h4, p{
+        @include font(24px, 35px, $dark)
+      }
+      h4{font-weight: 500;}
+      p{font-weight: 300;}
+    }
+    &-sale{
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: $dark;
+      @include font(20px, 30px, $white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

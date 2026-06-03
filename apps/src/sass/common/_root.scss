@@ -1,0 +1,38 @@
+@mixin font($fs: null, $lh: null, $color: null, $fw: null){
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    color: $color;
+}
+@mixin media($size){
+    @media(max-width: $size){
+        @content;
+    }
+}
+@mixin container() {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 15px;
+    @include media(1400px){max-width: 1140px;}
+    @include media(1200px){max-width: 960px;}
+    @include media(992px){max-width: 720px;}
+    @include media(768px){max-width: 540px;}
+    @include media(576px){max-width: 100%;}
+}
+$notoSans: ('Black', 900),('Bold', 700),('ExtraLight', 200),('Light', 300),('Medium', 500),('Regular', 400),('SemiBold', 600),('Thin', 100);
+@each $name, $weight in $notoSans{
+    @font-face {
+        font-family: 'noto sans';
+        src: url('../fonts/noto-sans/NotoSans-#{$name}.ttf') format('truetype');
+        font-weight: $weight;
+    }
+}
+$icons: ('light-300', 300),('brands-400', 400);
+@each $name, $weight in $icons{
+    @font-face {
+        font-family: 'icons';
+        src: url('../fonts/webfonts/fa-#{$name}.ttf') format('truetype');
+        font-weight: $weight;
+    }
+}

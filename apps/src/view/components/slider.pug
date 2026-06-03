@@ -1,0 +1,8 @@
+.slider.container(create-dots auto-play direction interval)
+  .slider_items 
+    -for(var i = 1; i <= 2; i++)
+      .slider_items-slide.slide 
+        .slide_img: img(src="images/slide"+i+".png", alt="")
+        .slide_content 
+          h3 Color your days with small joy
+          button.slide_content-btn SHOP NOW

@@ -1,0 +1,129 @@
+.single{
+  display: flex;
+  padding: 50px 15px 70px;
+  @include media(768px){
+    flex-direction: column;
+  }
+  &_tab,
+  &_content{
+    width: 50%;
+    @include media(768px){
+      width: 100%;
+    }
+  }
+  &_tab{
+    display: flex;
+    justify-content: space-between;
+    @include media(1200px){
+      flex-direction: column-reverse;
+    }
+    &-min{
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      @include media(1200px){
+        flex-direction: row;
+        width: 100%;
+        margin-top: 30px;
+        justify-content: space-between;
+      }
+      @include media(768px){
+        margin-bottom: 20px;
+      }
+      li{
+        width: 100%;
+        height: 150px;
+        padding: 10px;
+        opacity: 0.5;
+        transition: opacity 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        @include media(1200px){
+          width: 30%;
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+        &.active{
+          box-shadow: 0 0 5px 0 rgba($color: #000000, $alpha: 0.5);
+          opacity: 1;
+        }
+      }
+    }
+    &-img{
+      width: 60%;
+      height: 100%;
+      margin-right: 10%;
+      @include media(1200px){
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        @include media(1200px){
+          width: 70%;
+        }
+      }
+    }
+  }
+  &_content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &-title{
+      @include font(30px, 50px, $black, 600);
+      margin-bottom: 30px;
+      @include media(992px){
+        @include font(26px, 30px, $black, 600);
+        margin-bottom: 10px;
+      }
+    }
+    &-price,
+    &-info{
+      @include font(24px, 30px, $black, 500);
+    }
+    &-info{
+      margin: 20px 0 10px;
+      @include media(992px){
+        margin: 10px 0;
+      }
+    }
+    &-list{
+      padding-left: 25px;
+      margin-bottom: 30px;
+      li{
+        list-style: disc;
+        @include font(14px, 25px, $black);
+      }
+    }
+    &-btn{
+      display: flex;
+      align-items: center;
+      @include media(992px){
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+      }
+      .more{
+        padding: 13px 45px;
+        margin-right: 15px;
+        @include media(992px){
+          width: 70%;
+          justify-content: center;
+          margin-right: 0;
+          margin-bottom: 15px;
+        }
+        &::before{
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

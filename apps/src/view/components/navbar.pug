@@ -1,0 +1,49 @@
+nav.navbar
+  .signin 
+    form.signin_items(action="")
+      input(type="text" name="name" placeholder="*Your nickname") 
+      input(type="text" name="email" placeholder="*Your E-mail") 
+      button(type="button"): span Sign In
+      a(href="#!"): span Registration 
+  .container.navbar_flex 
+    a.navbar_logo(href="/"): img(src="images/Logo.png", alt="")  
+    form.navbar_search(action="")
+      input(type="text" name="search" placeholder="What are you looking for?") 
+      button.navbar_search-btn(type="button")
+        span.icon-search 
+        span SEARCH OUR STORE 
+    button.navbar_btn(type="button"): span 
+    .navbar_menu 
+        ul.navbar_menu-bottom 
+          each link, key in ['Cell Phone','Computer&Laptop','Tv&Video','Asseccories','Home appliance','Video Games&Consoles']
+            if(key <= 0)
+              li
+                a(href="page-phone.html")=link 
+                .navbar_menu-hover 
+                  .navbar_menu-list
+                    h5 Cell Phones
+                    ul 
+                      each linkHover in ['Xiaomi','Apple','Samsung','Huawei','BQ','Nokia','Inoi','Vivo']
+                        li: a(href="#!")= linkHover  
+                  .navbar_menu-list
+                    h5 Tablets
+                    ul 
+                      each linkHover in ['Xiaomi','Apple','Samsung','Huawei','BQ','More...']
+                        li: a(href="#!")= linkHover
+            else 
+              li: a(href="#!")= link 
+        .navbar_menu-top
+          .container.menu-top
+            .menu-top_config
+              .language 
+                a(href="#!") 
+                  span English 
+                  span.icon-chevrone 
+                .language_more 
+                  a(href="#!") English 
+                  a(href="#!") Russian 
+              a.phone(href="#!").icon-phone: span (907) 555-0101 
+              a.user(href="#!").icon-user: span.sign-in Sign in
+              a.cart(href="#!").icon-cart: span Cart  
+             
+            

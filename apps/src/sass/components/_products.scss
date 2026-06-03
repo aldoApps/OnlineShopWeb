@@ -1,0 +1,93 @@
+.products{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 70px;
+  &_content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 30px;
+    padding: 50px 0 30px;
+    @include media(1200px){
+      grid-template-columns: repeat(2, auto);
+    }
+    @include media(576px){
+      grid-template-columns: repeat(1, auto);
+    }
+  }
+}
+.card{
+  $card: &;
+  position: relative;
+  padding: 20px;
+  transition: box-shadow 0.3s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include media(576px){
+    box-shadow: 0 0 5px 0 rgba($color: #000000, $alpha: 0.5);
+  }
+  &:hover{
+    box-shadow: 0 0 5px 0 rgba($color: #000000, $alpha: 0.5);
+    #{$card}_fav{
+      top: 17px;
+    }
+    #{$card}_btn{
+      transform: translateY(0);
+    }
+  }
+  &_fav{
+    position: absolute;
+    right: 16px;
+    top: -25px;
+    transition: top 0.3s;
+    @include font(20px, null, $dark);
+    &:hover{
+      color: red;
+    }
+    @include media(576px){
+      top: 17px;
+    }
+  }
+  &_img{
+    width: 100%;
+    height: 250px;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &_content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    h4{
+      @include font(16px, 22px, $dark, 600);
+      margin: 20px 0 5px;
+    }
+    p{
+      @include font(14px, 19px, $dark, 400);
+      margin-bottom: 10px;
+    }
+  }
+  &_btn{
+    padding: 5px 36px;
+    background: $dark;
+    @include font(14px, 20px, $white);
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;
+    transform: translateY(100px);
+    transition: transform 0.3s;
+    @include media(576px){
+      transform: unset;
+    }
+  }
+}

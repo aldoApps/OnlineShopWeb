@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'noto sans';
+    font-weight: 400;
+    &::before{
+        font-family: 'icons';
+    }
+}
+
+:root{
+    --dark: #313131;
+    --black: #0c0c0c;
+    --white: #ffffff;
+    --grey: #ababab;
+    --grey-text: #bbbbbb;
+}
+
+$dark: var(--dark);
+$black: var(--black);
+$white: var(--white);
+$grey: var(--grey);
+$greyText: var(--grey-text);
+
+.icon{
+    &-phone::before    {content: '\f879'; font-weight: 300;}
+    &-user::before     {content: '\f007'; font-weight: 300;}
+    &-cart::before     {content: '\f07a'; font-weight: 300;}
+    &-chevrone::before {content: '\f077'; font-weight: 300;}
+    &-heart::before    {content: '\f004'; font-weight: 300;}
+    &-search::before   {content: '\f002'; font-weight: 300;}
+    &-telegram::before {content: '\f3fe'; font-weight: 400;}
+    &-facebook::before {content: '\f39e'; font-weight: 400;}
+    &-instagram::before{content: '\f16d'; font-weight: 400;}
+}
+
+.container{
+    @include container();
+}
+
+.title{
+    @include font(36px, 49px, $dark, 600);
+    width: 100%;
+}
+.more{
+    @include font(20px, 25px, $white);
+    text-transform: uppercase;
+    padding: 12px 28px;
+    background: $dark;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;
+}

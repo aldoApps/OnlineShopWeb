@@ -1,0 +1,8 @@
+.products.container   
+  h3.title Cell phone
+  .products_content 
+    each item, num in iphone
+      +cardProduct('phone/phone', num, item.title, item.price)
+  a.more learn more
+    
+    

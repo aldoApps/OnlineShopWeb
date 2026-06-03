@@ -1,0 +1,7 @@
+.products.container   
+  h3.title Laptop
+  .products_content 
+    each item, num in laptop
+      +cardProduct('noutbook/nout', num, item.title, item.price)
+  a.more learn more
+    

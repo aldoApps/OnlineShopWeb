@@ -1,0 +1,11 @@
+.leader 
+  .container.leader_content 
+    each content in {prod1: {sale: '-57%', title: 'Suunto SS050143000', price: '70$', num: '1'},prod2: {sale: '-30%', title: 'Airpods 2.1', price: '95$', num: '2'},prod3: {sale: '-20%', title: 'Xiaomi Mi Power Bank 2s 10000', price: '9$', num: '3'},prod4: {sale: '-10%', title: 'Remax RP-W1 White', price: '11$', num: '4'}}
+      .leader_content-item.item 
+        img.item_img(src="images/product-"+content.num+".png", alt="")
+        .item_content 
+          .item_content-text 
+            h4=content.title 
+            p=content.price 
+          .item_content-sale=content.sale
+  button.more learn more

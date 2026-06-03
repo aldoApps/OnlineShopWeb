@@ -1,0 +1,333 @@
+.navbar{
+    width: 100%;
+    background: $white;
+    position: relative;
+    .signin{
+        width: 100%;
+        position: absolute;
+        height: 100vh;
+        background: rgba($color: #00000071, $alpha: 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        &_items{
+            @include media(768px){
+                width: 500px;
+                height: 300px;
+            }
+            @include media(576px){
+                width: 350px;
+                height: 200px;
+                padding: 15px 0;
+            }
+            position: absolute;
+            background: $white;
+            max-width: 600px;
+            width: 100%;
+            height: 400px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            padding: 30px 0;
+            input{
+                padding: 10px 5px;
+                margin: 20px 0;
+                width: 400px;
+                outline: none;
+                @include font(18px, 20px, $dark);
+                @include media(768px){
+                    width: 350px;
+                    
+                }
+                @include media(576px){
+                    width: 250px;
+                    height: 30px;
+                    margin: 10px 0;
+                }
+            }
+            input::placeholder{
+                @include font(18px)
+            }
+            button{
+                margin-top: 30px;
+                border: none;
+                outline: none;
+                background: $dark;
+                padding: 15px 30px;
+                width: 150px;
+                @include font(18px, 20px, $white);
+                cursor: pointer;
+                @include media(576px){
+                    width: 100px;
+                    padding: 5px 15px;
+                    margin: 0;
+                }
+            }
+            a{
+                margin-top: 10px;
+                @include font(18px, 20px, $dark)
+            }
+        }
+    }
+    &_flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-top: 75px;
+        @include media(1200px){
+            padding: 20px 15px;
+        }
+    }
+    &_search{
+        max-width: 630px;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        border: 1px solid $dark;
+        margin-right: 330 / 1320 * 100%;
+        @include media(1200px){
+            margin-right: 0;
+        }
+        @include media(992px){
+            order: 1;
+            max-width: 100%;
+            margin-top: 10px;
+        }
+        input{
+            flex-grow: 1;
+            border: none;
+            outline: none;
+            padding: 0px 10px;
+            @include font(14px, 20px, $dark);
+            &::placeholder{
+                color: $greyText;
+            }
+        }
+        &-btn{
+            border: none;
+            outline: none;
+            background: $dark;
+            @include font(14px, 20px, $white);
+            padding: 15px;
+            cursor: pointer;
+            .icon-search{
+                margin-right: 5px;
+            }
+            span:last-of-type{
+                @include media(480px){
+                    display: none;
+                }
+            }
+            span:first-of-type{
+                @include media(480px){
+                    font-size: 20px;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    &_btn{
+        width: 40px;
+        height: 40px;
+        border: 1px solid $dark;
+        padding: 5px;
+        background: $white;
+        outline: none;
+        cursor: pointer;
+        display: none;   
+        @include media(1200px){
+            display: block;
+        }      
+        span{
+            width: 100%;
+            height: 4px;
+            background: $dark;
+            display: flex;
+            position: relative;
+            &::before,
+            &::after{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                content: '';
+                background: $dark;
+                transition: transform 0.3s, top 0.3s, bottom 0.3s;
+            }
+            &::before{
+                top: 8px;
+            }
+            &::after{
+                bottom: 8px;
+            }
+        }
+        &.active span{
+            background: transparent;
+        }
+        &.active span::before{
+            transform: rotate(45deg);
+            top: 0;
+        }
+        &.active span::after{
+            transform: rotate(-45deg);
+            bottom: 0;
+        }
+    }
+    &_menu{
+        $hover: &;  
+        width: 100%;
+        margin-top: 35px;
+        z-index: 9;
+        @include media(1200px){
+            position: fixed;
+            background: $dark;
+            left: -280px;
+            top: 0;
+            width: 260px;
+            height: 100vh;
+            margin-top: 0;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+        }
+        &-bottom{
+          display: flex;
+          justify-content: center;
+          @include media(1200px){
+              flex-direction: column;
+          }
+          li{
+            position: relative;
+            a{
+              @include font(18px, 30px, $dark, 400);
+              padding: 5px 15px;
+              display: flex;
+              @include media(1200px){
+                  color: $white;
+              }
+            }
+            &:hover #{$hover}-hover{
+              display: flex;
+            }
+            #{$hover}-hover{
+              position: absolute;
+              left: -20px;
+              min-height: 200px;
+              padding: 18px 20px;
+              box-shadow: 0 0 5px 0 rgba($color: #000000, $alpha: 0.5);
+              display: none;
+              justify-content: center;
+              z-index: 10;
+              background: $white;
+              @include media(1200px){
+                  position: relative;
+                  left: 0;
+                  width: 90%;
+                  margin: 0 auto;
+              }
+              &::before{
+                  position: absolute;
+                  width: 90%;
+                  height: 3px;
+                  background: $dark;
+                  content: '';
+                  top: 0;  
+              }
+            }
+            #{$hover}-list{
+                width: 120px;
+                a{
+                    @include font(14px, 18px, $dark, 300);
+                    padding: 0;
+                }
+                h5{
+                    @include font(16px, 25px, $dark, 400);
+                    margin-bottom: 10px;
+                }
+            }
+          }  
+        }
+        &-top{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $dark;
+            width: 100%;
+            @include media(1200px){
+                position: relative;
+            }
+        }
+    }
+}
+.menu-top{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    @include media(1200px){
+        justify-content: flex-end;
+    }
+    &_config{
+        display: flex;
+        align-items: center;
+        @include media(1200px){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    a{
+        padding: 15px;
+        @include font(14px, 20px, $white);
+        display: flex;
+        @include media(1200px){
+            padding: 10px 0;
+        }
+        span{
+            margin-left: 5px;
+        }
+    }   
+    .language{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        @include media(1200px){
+            flex-direction: column;
+            width: 100%;
+        }
+        .icon-chevrone{
+            transition: transform 0.2s;
+        }
+        &:hover{
+            .language_more{
+                display: block;
+            }
+            .icon-chevrone{
+                transform: rotate(180deg);
+            }
+        }
+        &_more{
+            position: absolute;
+            background: $white;
+            box-shadow: 0 0 5px 0 rgba($color: #000000, $alpha: 0.5);
+            padding: 3px 5px;
+            bottom: -100%;
+            display: none;
+            @include media(1200px){
+                position: relative;
+                bottom: 0;
+            }
+            a{
+                padding: 2px 9px;
+                color: $grey;
+                border-bottom: 1px solid $grey;
+                transition: color 0.3s;
+                &:last-of-type{
+                    border-bottom: none;
+                }
+                &:hover{
+                    color: $dark;
+                }
+            }
+        }
+    }
+}
